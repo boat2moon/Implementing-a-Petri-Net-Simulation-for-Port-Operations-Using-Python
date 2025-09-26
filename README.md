@@ -1,6 +1,6 @@
 # 船舶服务
 __系统的PetriNet图（在PortPertNet文件中）__
-![img_20.png](.\Picture\img_20.png)
+![img_20.png](https://github.com/boat2moon/Implementing-a-Petri-Net-Simulation-for-Port-Operations-Using-Python/blob/main/Picture/img_20.png)
 __PertriNet三要素：   
 Transition事件变迁、Place库所存储资源tokens、连线__  
 __也可以看作时一个资源流转图__  
@@ -23,7 +23,7 @@ __因此想要实时地可视化系统数据，只能通过salabim自带的动�
 # 六个输入数据文件
 ## 一、Transition
 <mark>(TransitionAttribute.xlsx)</mark>  
-![img_22.png](.\Picture\img_22.png)
+![img_22.png](https://github.com/boat2moon/Implementing-a-Petri-Net-Simulation-for-Port-Operations-Using-Python/blob/main/Picture/img_22.png)
 __编号__  
 __[耗时，结束条件]__  
 __描述__  
@@ -64,8 +64,8 @@ class TransitionProcess(sim.Component):
 他隐含在PN_Matrix矩阵这个数据结构中  
 包括方向权重、类型  
 <mark>（PortPertNet.xlsx）</mark>
-![img_11.png](.\Picture\img_11.png)  
-![img_12.png](.\Picture\img_12.png)  
+![img_11.png](https://github.com/boat2moon/Implementing-a-Petri-Net-Simulation-for-Port-Operations-Using-Python/blob/main/Picture/img_11.png)  
+![img_12.png](https://github.com/boat2moon/Implementing-a-Petri-Net-Simulation-for-Port-Operations-Using-Python/blob/main/Picture/img_12.png)  
 非方阵、稀疏  
 Ti--Pj:[a,b]  
 第一位正号，代表Ti-->Pj，若为负数代表Pi-->Tj  
@@ -84,7 +84,7 @@ Ti--Pj:[a,b]
 
 ## 三、Place
 <mark>（PlaceAttribute.xlsx）</mark>  
-![img_23.png](.\Picture\img_23.png)
+![img_23.png](https://github.com/boat2moon/Implementing-a-Petri-Net-Simulation-for-Port-Operations-Using-Python/blob/main/Picture/img_23.png)
 __编号：Pn__  
 __Tokens： { pid1_1:n,  pid1_2:n, pid3_1:n }__  
 __作用：__  
@@ -114,7 +114,7 @@ class PlaceStore(sim.Store):
 
 ## 四、另外三个输入文件
 <mark>ships.xlsx</mark>    
-![img_15.png](.\Picture\img_15.png)  
+![img_15.png](https://github.com/boat2moon/Implementing-a-Petri-Net-Simulation-for-Port-Operations-Using-Python/blob/main/Picture/img_15.png)  
 船舶id__________________________X__________________________Y  
 进口集装箱即代表着这条船要运多少个集装箱过来，卸船系统需要卸载多少个集装箱  
 出口集装箱代表着船要从这个港口装走多少货物再离港，也意味着要从内陆集箱到港口的量  
@@ -125,14 +125,14 @@ class PlaceStore(sim.Store):
 卸船系统结束的Transition，需要一次性消耗X个“已结束一次卸船”的信号，然后产出Y个装船指令  
 船舶离港也需要一次消耗Y个“已结束一次装船”的信号  
 
-![img_11.png](.\Picture\img_11.png)  
-![img_12.png](.\Picture\img_12.png)  
+![img_11.png](https://github.com/boat2moon/Implementing-a-Petri-Net-Simulation-for-Port-Operations-Using-Python/blob/main/Picture/img_11.png)  
+![img_12.png](https://github.com/boat2moon/Implementing-a-Petri-Net-Simulation-for-Port-Operations-Using-Python/blob/main/Picture/img_12.png)  
 比如上面提到的（PortPertNet.xlsx）文件中连线权重有XY来标记的  
 代表着对应与当前的船舶服务来说（进程），这条连线的权重取决于当前船舶的进口出口集装箱数  
   
   
 <mark>StopFlag.xlsx</mark>  
-![img_16.png](.\Picture\img_16.png)  
+![img_16.png](https://github.com/boat2moon/Implementing-a-Petri-Net-Simulation-for-Port-Operations-Using-Python/blob/main/Picture/img_16.png)  
 标记一个船舶服务即一个进程什么时候停止  
 假设这里的T28代表船舶离港  
 T29代表提箱结束,该船只的进口货物已全部从港口被提走  
@@ -141,7 +141,7 @@ T29代表提箱结束,该船只的进口货物已全部从港口被提走
 因为可能还有一部分没被内陆提走的集装箱带有该船只进程的标识符
 
 <mark>TransitionFlag.xlsx</mark>  
-![img_24.png](.\Picture\img_24.png)
+![img_24.png](https://github.com/boat2moon/Implementing-a-Petri-Net-Simulation-for-Port-Operations-Using-Python/blob/main/Picture/img_24.png)
 设置一个船舶服务要在哪些transition事件状态over后记录一下时刻  
 程序可以输出显示  
 
@@ -163,10 +163,10 @@ class ShipProcess(sim.Component):
 
 # 该模拟程序的输出
 GUI输出界面  
-![img_25.png](.\Picture\img_25.png)
-![img_29.png](.\Picture\img_29.png)
-![img_26.png](.\Picture\img_26.png)
-![img_28.png](.\Picture\img_28.png)
+![img_25.png](https://github.com/boat2moon/Implementing-a-Petri-Net-Simulation-for-Port-Operations-Using-Python/blob/main/Picture/img_25.png)
+![img_29.png](https://github.com/boat2moon/Implementing-a-Petri-Net-Simulation-for-Port-Operations-Using-Python/blob/main/Picture/img_29.png)
+![img_26.png](https://github.com/boat2moon/Implementing-a-Petri-Net-Simulation-for-Port-Operations-Using-Python/blob/main/Picture/img_26.png)
+![img_28.png](https://github.com/boat2moon/Implementing-a-Petri-Net-Simulation-for-Port-Operations-Using-Python/blob/main/Picture/img_28.png)
 各个船只的一些事件发生的时间，如进港、离港  
 模拟结果的一些数据统计
 各个船只的各个Transition事件随时间的状态变化 
